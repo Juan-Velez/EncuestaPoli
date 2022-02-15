@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <title>Poli JIC</title>
+</head>
+<body>
+    <header>
+        <div class="ancho">
+            <div class="logo">
+                <a href="/"><img src="/img/logo.png"></a>
+            </div>
+            <nav class="nav1">
+                <ul>
+                    <li>INGENIERIA INFORMATICA (PROGRAMACION DISTRIBUIDA Y PARALELA)</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <header class="header2">
+        <div class="ancho2">
+            <nav class="nav2">
+                <ul>
+                    <li><a href="/vacunas">Vacunas autorizadas</a></li>
+                    <li><a href="/iasociado">Informe personas registradas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="slider">
+        <ul>
+            <li>
+                <img src="/img/construyamos-nuestro-plan-de-desarrollo-2022-2025.png">
+            </li>
+            <li>
+                <img src="/img/cursos-diplomados-educacion-continua-2022-1.png">
+            </li>
+            <li>
+                <img src="/img/puesto-de-vacunacion-en-el-poli-covid-19.png">
+            </li>
+            <li>
+                <img src="/img/reporte-condiciones-salud-2021.png">
+            </li>
+        </ul>
+    </div>
+    <div class="container" style="margin-bottom: 50px;">
+        <h1 style="text-align: center;">ENCUESTA CONTROL DE VACUNACION POLITECNICO COLOMBIANO JAIME ISAZA CADAVID</h1>
+        <form action="/update/<%= data.id%>" method="post" class="formulario" id="formulario" style="margin-top: 40px;">
+			<!-- Grupo: Nombre -->
+			<div class="formulario__grupo" id="grupo__nombre">
+				<label for="nombre" class="formulario__label">Nombre</label>
+				<div class="formulario__grupo-input">
+					<input name="nombre" type="text" class="formulario__input"  id="nombre" placeholder="John Doe">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+			</div>
+			<!-- Grupo: Correo Electronico -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<label for="correo" class="formulario__label">Correo Electrónico</label>
+				<div class="formulario__grupo-input">
+					<input type="email" class="formulario__input" name="email" id="email" placeholder="correo@correo.com">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+			</div>
+            <!-- Grupo: Tipo identificacion -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<label for="correo" class="formulario__label">Tipo identificacion</label>
+				<div class="formulario__grupo-input">
+                    <select name="tipo_identificacion" id="tipo_identificacion" class="formulario__input">
+                        <option selected>Tipo identificacion</option>
+                        <option value="Cedula de ciudadanida">Cedula de ciudadania</option>
+                        <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                    </select>
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+			</div>
+            <!-- Grupo: identificacion -->
+			<div class="formulario__grupo" id="grupo__telefono">
+				<label for="telefono" class="formulario__label">Numero de identificación</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="identificacion" id="identificacion" placeholder="">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+			</div>
+            <!-- Grupo: Teléfono -->
+			<div class="formulario__grupo" id="grupo__telefono">
+				<label for="telefono" class="formulario__label">Teléfono</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+			</div>
+            <!-- Grupo: Tipo asociado -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<label for="correo" class="formulario__label">Tipo de asociado</label>
+				<div class="formulario__grupo-input">
+                    <select name="tipo_asociado" id="tipo_asociado" class="formulario__input">
+                        <option selected>Tipo de asociado</option>
+                        <option value="Profesor de planta">Profesor de planta</option>
+                        <option value="Profesor de catedra">Profesor de catedra</option>
+                        <option value="Administrativo">Administrativo</option>
+                        <option value="Contratista">Contratista</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+			</div>
+            <!-- Grupo: tipo vacuna -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<label for="correo" class="formulario__label">Tipo de vacuna aplicada</label>
+				<div class="formulario__grupo-input">
+                    <select name="tipo_vacuna" id="tipo_vacuna" class="formulario__input">
+                        <option selected>Tipo de vacuna</option>
+                        <%for (var i = 0; i < vacuna.length; i++) {%>
+                        <option value="<%= vacuna[i].nombre_vacuna %>"><%= vacuna[i].nombre_vacuna%></option>
+                        <% } %>
+                    </select>
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+			</div>
+            <!-- Grupo: eps-->
+			<div class="formulario__grupo" id="grupo__correo">
+				<label for="correo" class="formulario__label">EPS</label>
+				<div class="formulario__grupo-input">
+                    <select name="eps" id="eps" class="formulario__input">
+                        <option selected>EPS</option>
+                        <option value="SURA">SURA</option>
+                        <option value="Medimas">Medimas</option>
+                        <option value="Famisanar">Famisanar</option>
+                        <option value="Sanitas">Sanitas</option>
+                        <option value="Cafesalud">Cafesalud</option>
+                        <option value="Nueva EPS">Nueva EPS</option>
+                    </select>
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+			</div>
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+			</div>
+
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+				<button type="submit" class="formulario__btn">Enviar</button>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+			</div>
+		</form>
+    </div>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <legend>Empleado</legend>
+                    <form action="/update/<%= data.id%>" method="post">
+                        <div class="form-group">
+                            <input type="text" name="nombre" value="<%= data.nombre%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="area" value="<%= data.area%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="tipo_empleado" value="<%= data.tipo_empleado%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="oficina" value="<%= data.oficina%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="tipo_contrato" value="<%= data.tipo_contrato%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="salon" value="<%= data.salon%>" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary form-control">Editar empleado</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
