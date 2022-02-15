@@ -1,8 +1,6 @@
 const controllerIasociado = {};
 
 controllerIasociado.list = (req, res) => {
-    var asociado = null;
-    var vacuna = null;
     req.getConnection((err, conn) => {
         conn.query('SELECT *FROM Vacunas', (err, vacuna) => {
             vacuna = vacuna;
@@ -23,7 +21,7 @@ controllerIasociado.list = (req, res) => {
     });
 };
 
-controllerIasociado.edit = (req, res) =>{
+controllerIasociado.edit = (req, res) => {
     const { id } = req.params;
     req.getConnection((err, conn) => {
         conn.query('SELECT *FROM Asociados WHERE id = ?', [id], (err, asociado) => {
@@ -34,11 +32,11 @@ controllerIasociado.edit = (req, res) =>{
     });
 };
 
-controllerIasociado.update = (req, res) =>{
+controllerIasociado.update = (req, res) => {
     const { id } = req.params;
     const nuevaAsociado = req.body;
     req.getConnection((err, conn) => {
-        conn.query('UPDATE Asociados set ? WHERE id = ?', [nuevaAsociado, id], (err, area) => {
+        conn.query('UPDATE Asociados set ? WHERE id = ?', [nuevaAsociado, id], (err, asociado) => {
             res.redirect('/iasociado');
         });
     });

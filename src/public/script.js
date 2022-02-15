@@ -6,7 +6,7 @@
 }
 */
 
-/*document.addEventListener("DOMContentLoaded", () =>{
+/*document.addEventListener("DOMContentLoaded", () => {
     alert("por dios de");
     const $boton = document.querySelector("#btnCrearPDF");
     $boton.addEventListener("click", () => {

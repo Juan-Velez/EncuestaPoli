@@ -5,8 +5,7 @@ const app = express();
 const mysql = require('mysql');
 const myConnection = require('express-myconnection');
 
-
-//importating routes
+//Importating routes
 const asociadoRoutes = require('./routes/rutas');
 const { urlencoded } = require('express');
 
@@ -15,22 +14,22 @@ app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-//middlewares
+//Middlewares
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
-    password: 'admin',
+    password: 'killerzton',
     port: 3306,
     database: 'crudcovid'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.static('public'));
 
-//routes
+//Routes
 app.use('/', asociadoRoutes);
 
-//statics files
+//Statics files
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(app.get('port'), () => {

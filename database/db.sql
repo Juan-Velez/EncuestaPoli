@@ -4,12 +4,12 @@ CREATE DATABASE crudcovid;
 --Using database
 USE crudcovid;
 
---Creating table Empleados
+--Creating table Asociados
 CREATE TABLE Asociados (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
-    email VARCHAR(150) NOT NULL,
-    tipo_identifiacion VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    tipo_identificacion VARCHAR(50) NOT NULL,
     identificacion VARCHAR(15) NOT NULL,
     telefono VARCHAR(15) NOT NULL,
     tipo_asociado VARCHAR(50) NOT NULL,
@@ -17,18 +17,17 @@ CREATE TABLE Asociados (
     eps VARCHAR(50)
 );
 
---Creating table Areas
-CREATE TABLE Vacunas(
-    idVacuna INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+--Creating table Vacunas
+CREATE TABLE Vacunas (
+    id_vacuna INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nombre_vacuna VARCHAR(50) NOT NULL
 );
 
 SHOW TABLES;
 
 --Describe tables
-DESCRIBE Empleados;
+DESCRIBE Asociados;
 DESCRIBE Vacunas;
-
 
 --Eliminate database
 DROP DATABASE crudcovid;

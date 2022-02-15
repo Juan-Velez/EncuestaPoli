@@ -1,8 +1,6 @@
 const controllerAsociado = {};
 
 controllerAsociado.list = (req, res) => {
-    var asociado = null;
-    var vacuna = null;
     req.getConnection((err, conn) => {
         conn.query('SELECT *FROM Asociados', (err, asociado) => {
             asociado = asociado;
@@ -34,7 +32,7 @@ controllerAsociado.save = (req, res) => {
     });
 };
 
-controllerAsociado.edit = (req, res) =>{
+controllerAsociado.edit = (req, res) => {
     const { id } = req.params;
     req.getConnection((err, conn) => {
         conn.query('SELECT *FROM Asociados WHERE id = ?', [id], (err, asociado) => {
@@ -45,7 +43,7 @@ controllerAsociado.edit = (req, res) =>{
     });
 };
 
-controllerAsociado.update = (req, res) =>{
+controllerAsociado.update = (req, res) => {
     const { id } = req.params;
     const nuevoAsociado= req.body;
     req.getConnection((err, conn) => {

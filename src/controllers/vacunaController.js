@@ -23,7 +23,7 @@ controllerVacuna.save = (req, res) => {
     });
 };
 
-controllerVacuna.edit = (req, res) =>{
+controllerVacuna.edit = (req, res) => {
     const { idVacuna } = req.params;
     req.getConnection((err, conn) => {
         conn.query('SELECT *FROM Vacunas WHERE idVacuna = ?', [idVacuna], (err, vacuna) => {
@@ -34,11 +34,11 @@ controllerVacuna.edit = (req, res) =>{
     });
 };
 
-controllerVacuna.update = (req, res) =>{
+controllerVacuna.update = (req, res) => {
     const { idVacuna } = req.params;
     const nuevaVacuna = req.body;
     req.getConnection((err, conn) => {
-        conn.query('UPDATE Vacunas set ? WHERE idVacuna = ?', [nuevaVacuna, idVacuna], (err, area) => {
+        conn.query('UPDATE Vacunas set ? WHERE idVacuna = ?', [nuevaVacuna, idVacuna], (err, vacuna) => {
             res.redirect('/vacuna');
         });
     });
