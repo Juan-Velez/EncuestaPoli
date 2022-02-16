@@ -17,11 +17,11 @@ app.set('views', path.join(__dirname, 'views'));
 //Middlewares
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
-    host: 'localhost',
-    user: 'root',
-    password: 'admin',
+    host: 'us-cdbr-east-05.cleardb.net',
+    user: 'bbfab50a428575',
+    password: '1e28a286',
     port: 3306,
-    database: 'crudcovid'
+    database: 'heroku_28c5b621d8503f9'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.static('public'));
