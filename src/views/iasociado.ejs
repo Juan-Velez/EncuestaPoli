@@ -47,7 +47,7 @@
             </li>
         </ul>
     </div>
-    <div class="container" style="margin-left: 10%; margin-bottom: 10%;">
+    <div class="container" style="margin-right: 15%; margin-bottom: 10%;">
         <h1 style="margin-top: 5rem; text-align: center;">Informe de los asociados registrados</h1>
         <% var numeroAsociados = 0%>
         <% if (data)  { %>
@@ -84,7 +84,7 @@
                             <td><%= data[i].eps%></td>
                             <td>
                                 <a href="/iasociado/delete/<%= data[i].id %>" class="btn btn-danger">Eliminar</a>
-                                <a href="/iasociado/update/<%= data[i].id %>" class="btn btn-info">Editar</a>
+                                <a href="/iasociado/edit/<%= data[i].id %>" class="btn btn-info">Editar</a>
                             </td>
                         </tr>
                     <% } %>

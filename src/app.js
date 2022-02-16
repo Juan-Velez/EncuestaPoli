@@ -19,7 +19,7 @@ app.use(morgan('dev'));
 app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
-    password: 'killerzton',
+    password: 'admin',
     port: 3306,
     database: 'crudcovid'
 }, 'single'));
