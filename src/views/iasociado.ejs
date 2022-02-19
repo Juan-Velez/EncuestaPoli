@@ -9,6 +9,12 @@
     <title>PCJIC</title>
 </head>
 <body>
+    <div class="social-bar">
+        <a href="https://www.facebook.com/polijic/" target="_blank"><i class="fa-brands fa-facebook-f icono"></i></a>
+        <a href="https://www.youtube.com/channel/UCLSaxR0qrhvgCg2SUVW84FQ/videos" target="_blank"><i class="fa-brands fa-youtube icono"></i></a>
+        <a href="https://www.instagram.com/politecnicojic/?hl=es-la" target="_blank"><i class="fa-brands fa-instagram icono"></i></a>
+        <a href="https://twitter.com/politecnicoJIC" target="_blank"><i class="fa-brands fa-twitter icono"></i></a>
+    </div>
     <header>
         <div class="ancho">
             <div class="logo">
@@ -47,7 +53,7 @@
             </li>
         </ul>
     </div>
-    <div class="container" style="margin-right: 15%; margin-bottom: 10%;">
+    <div class="container" style="margin-bottom: 10%;">
         <h1 style="margin-top: 5rem; text-align: center;">Informe de los asociados registrados</h1>
         <% var numeroAsociados = 0%>
         <% if (data)  { %>
@@ -62,7 +68,6 @@
                 <br>
                 <th>NOMBRE</th>
                 <th>EMAIL</th>
-                <th>TIPO ID</th>
                 <th>ID</th>
                 <th>TELEFONO</th>
                 <th>ASOCIADO</th>
@@ -76,22 +81,21 @@
                         <tr>
                             <td><%= data[i].nombre%></td>
                             <td><%= data[i].email%></td>
-                            <td><%= data[i].tipo_identificacion%></td>
                             <td><%= data[i].identificacion%></td>
                             <td><%= data[i].telefono%></td>
                             <td><%= data[i].tipo_asociado%></td>
                             <td><%= data[i].tipo_vacuna%></td>
                             <td><%= data[i].eps%></td>
                             <td>
-                                <a href="/iasociado/delete/<%= data[i].id %>" class="btn btn-danger">Eliminar</a>
-                                <a href="/iasociado/edit/<%= data[i].id %>" class="btn btn-info">Editar</a>
+                                <a href="/iasociado/delete/<%= data[i].id %>"><i class="fa-solid fa-trash-can" style="margin-right: 10%;"></i></a>
+                                <a href="/iasociado/edit/<%= data[i].id %>"><i class="fa-solid fa-pen"></i></a>
                             </td>
                         </tr>
                     <% } %>
                 <% } %>
             </tbody>
         </table>
-    </div>
-    <script src="script.js"></script>
+    </div>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

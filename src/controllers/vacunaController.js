@@ -24,9 +24,9 @@ controllerVacuna.save = (req, res) => {
 };
 
 controllerVacuna.edit = (req, res) => {
-    const { idVacuna } = req.params;
+    const { id_vacuna  } = req.params;
     req.getConnection((err, conn) => {
-        conn.query('SELECT *FROM Vacunas WHERE idVacuna = ?', [idVacuna], (err, vacuna) => {
+        conn.query('SELECT *FROM Vacunas WHERE id_vacuna = ?', [id_vacuna], (err, vacuna) => {
             res.render('vacuna_edit', {
                 data: vacuna[0]
             });
@@ -35,22 +35,23 @@ controllerVacuna.edit = (req, res) => {
 };
 
 controllerVacuna.update = (req, res) => {
-    const { idVacuna } = req.params;
+    const { id_vacuna  } = req.params;
     const nuevaVacuna = req.body;
     req.getConnection((err, conn) => {
-        conn.query('UPDATE Vacunas set ? WHERE idVacuna = ?', [nuevaVacuna, idVacuna], (err, vacuna) => {
+        conn.query('UPDATE Vacunas set ? WHERE id_vacuna = ?', [nuevaVacuna, id_vacuna ], (err, vacuna) => {
             res.redirect('/vacuna');
         });
     });
 };
 
 controllerVacuna.delete = (req, res) => {
-    const { idVacuna } = req.params;
+    const { id_vacuna } = req.params;
     req.getConnection((err, conn) => {
-        conn.query('DELETE FROM Vacunas WHERE idVacuna = ?', [idVacuna], (err, rows) => {
+        conn.query('DELETE FROM Vacunas WHERE id_vacuna = ?', [id_vacuna], (err, rows) => {
             res.redirect('/vacuna');
         });
     })
 };
+
 
 module.exports = controllerVacuna;

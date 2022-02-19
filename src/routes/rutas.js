@@ -12,9 +12,9 @@ router.post('/add', asociadoController.save);
 //Rutas Vacuna
 router.get('/vacuna', vacunaController.list);
 router.post('/vacuna/add', vacunaController.save);
-router.get('/vacuna/delete/:idVacuna', vacunaController.delete);
-router.get('/vacuna/edit/:idVacuna', vacunaController.edit);
-router.post('/vacuna/update/:idVacuna', vacunaController.update);
+router.get('/vacuna/delete/:id_vacuna', vacunaController.delete);
+router.get('/vacuna/edit/:id_vacuna', vacunaController.edit);
+router.post('/vacuna/update/:id_vacuna', vacunaController.update);
 
 //Rutas Iasociado
 router.get('/iasociado', iasociadoController.list);

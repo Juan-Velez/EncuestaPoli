@@ -9,6 +9,12 @@
     <title>PCJIC</title>
 </head>
 <body>
+    <div class="social-bar">
+        <a href="https://www.facebook.com/polijic/" target="_blank"><i class="fa-brands fa-facebook-f icono"></i></a>
+        <a href="https://www.youtube.com/channel/UCLSaxR0qrhvgCg2SUVW84FQ/videos" target="_blank"><i class="fa-brands fa-youtube icono"></i></a>
+        <a href="https://www.instagram.com/politecnicojic/?hl=es-la" target="_blank"><i class="fa-brands fa-instagram icono"></i></a>
+        <a href="https://twitter.com/politecnicoJIC" target="_blank"><i class="fa-brands fa-twitter icono"></i></a>
+    </div>
     <header>
         <div class="ancho">
             <div class="logo">
@@ -47,24 +53,33 @@
             </li>
         </ul>
     </div>
+    <div class="container" style="margin-bottom: 50px;" id="Agregar">
+
+    </div>
+
     <div class="container">
-        <div class="row mt-5">
-            <div class="card" id="Agregar" style="border:1px solid black; display: none; margin-bottom: 2px;">
-                <div class="card-body">
-                    <legend>Vacuna</legend>
-                    <form action="/vacuna/add" method="post">
-                        <div class="form-group">
-                            <input type="text" name="nombre_vacuna" placeholder="Vacuna" class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-primary form-control">Agregar Vacuna</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+        <h1 style="text-align: center;">VACUNA</h1>
+        <form action="/vacuna/add" method="post" class="formulario" id="formulario" style="margin-top: 40px;">
+			<!-- Grupo: Nombre -->
+			<div class="formulario__grupo" id="grupo__nombre">
+				<label for="nombre" class="formulario__label">Nombre</label>
+				<div class="formulario__grupo-input">
+					<input name="nombre_vacuna" type="text" class="formulario__input"  id="nombre_vacuna" placeholder="Nombre vacuna">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El nombre solo puede contener números, letras y guión bajo, y su tamaño debe ser de 4 a 16 dígitos.</p>
+			</div>
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b>Por favor rellene el formulario correctamente.</p>
+			</div>
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+				<button type="submit" class="formulario__btn">Agregar Vacuna</button>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+			</div>
+		</form>
         <table class="table table-bordered table-hover mt-5" id="tabla" style="margin-bottom: 10%;">
             <thead style="text-align: center;">
                 <br>
-                <button onclick="myFunction()" class="btn btn-success">Agregar</button>
                 <th>ID VACUNA</th>
                 <th>NOMBRE</th>
                 <th>ACCIONES</th>
@@ -76,8 +91,8 @@
                             <td><%= i+1 %></td>
                             <td><%= data[i].nombre_vacuna %></td>
                             <td>
-                                <a href="/vacuna/delete/<%= data[i].idVacuna %>" class="btn btn-danger">Eliminar</a>
-                                <a href="/vacuna/edit/<%= data[i].idVacuna %>" class="btn btn-info">Editar</a>
+                                <a href="/vacuna/delete/<%= data[i].id_vacuna %>"><i class="fa-solid fa-trash-can" style="margin-right: 10%;"></i></a>
+                                <a href="/vacuna/edit/<%= data[i].id_vacuna %>"><i class="fa-solid fa-pen"></i></a>
                             </td>
                         </tr>
                     <% } %>
@@ -85,6 +100,7 @@
             </tbody>
         </table>
     </div>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </body>
 </html>
