@@ -53,5 +53,4 @@ controllerVacuna.delete = (req, res) => {
     })
 };
 
-
 module.exports = controllerVacuna;

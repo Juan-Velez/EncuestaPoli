@@ -34,5 +34,4 @@ controllerAsociado.save = (req, res) => {
     });
 };
 
-
 module.exports = controllerAsociado;

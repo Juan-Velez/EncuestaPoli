@@ -54,7 +54,7 @@
         </ul>
     </div>
     <div class="container" style="margin-bottom: 50px;">
-        <h1 style="text-align: center;">EDICION</h1>
+        <h1 style="text-align: center;">EDICIÓN</h1>
         <form action="/iasociado/update/<%= data.id%>" method="post" class="formulario" id="formulario" style="margin-top: 40px;">
 			<!-- Grupo: Nombre -->
 			<div class="formulario__grupo" id="grupo__nombre">
@@ -65,8 +65,8 @@
 				</div>
 				<p class="formulario__input-error">El nombre solo puede contener números, letras y guión bajo, y su tamaño debe ser de 4 a 16 dígitos.</p>
 			</div>
-			<!-- Grupo: Correo Electronico -->
-			<div class="formulario__grupo" id="grupo__correo">
+			<!-- Grupo: Correo Electrónico -->
+			<div class="formulario__grupo" id="grupo__email">
 				<label for="email" class="formulario__label">Correo Electrónico</label>
 				<div class="formulario__grupo-input">
 					<input type="email" class="formulario__input" name="email" id="email" value="<%= data.email%>" placeholder="correo@correo.com">
@@ -74,8 +74,8 @@
 				</div>
 				<p class="formulario__input-error">El correo solo puede contener números, letras, punto, guión y guión bajo.</p>
 			</div>
-            <!-- Grupo: Tipo identificacion -->
-			<div class="formulario__grupo" id="grupo__correo">
+            <!-- Grupo: Tipo Identificación -->
+			<div class="formulario__grupo" id="grupo__tipo__identificacion">
 				<label for="tipo_identificacion" class="formulario__label">Tipo de identificación</label>
 				<div class="formulario__grupo-input">
                     <select name="tipo_identificacion" id="tipo_identificacion" class="formulario__input" >
@@ -88,14 +88,14 @@
 				</div>
 				<p class="formulario__input-error">Seleccione una opción de la lista.</p>
 			</div>
-            <!-- Grupo: identificacion -->
-			<div class="formulario__grupo" id="grupo__telefono">
+            <!-- Grupo: Identificación -->
+			<div class="formulario__grupo" id="grupo__identificacion">
 				<label for="identificacion" class="formulario__label">Número de identificación</label>
 				<div class="formulario__grupo-input">
 					<input type="text" class="formulario__input" name="identificacion" id="identificacion" value="<%= data.identificacion%>" placeholder="1234567890">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
-				<p class="formulario__input-error">El número de identificación solo puede contener números y su tamaño máximo es de 10 dígitos.</p>
+				<p class="formulario__input-error">El número de identificación solo puede contener números y su tamaño debe ser de 8 a 12 dígitos.</p>
 			</div>
             <!-- Grupo: Teléfono -->
 			<div class="formulario__grupo" id="grupo__telefono">
@@ -104,10 +104,10 @@
 					<input type="text" class="formulario__input" name="telefono" id="telefono" value="<%= data.telefono%>" placeholder="1234567">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
-				<p class="formulario__input-error">El teléfono solo puede contener números y su tamaño máximo es de 14 dígitos.</p>
+				<p class="formulario__input-error">El teléfono solo puede contener números y su tamaño debe ser de 7 a 14 dígitos.</p>
 			</div>
-            <!-- Grupo: Tipo asociado -->
-			<div class="formulario__grupo" id="grupo__correo">
+            <!-- Grupo: Tipo Asociado -->
+			<div class="formulario__grupo" id="grupo__tipo__asociado">
 				<label for="tipo_asociado" class="formulario__label">Tipo de asociado</label>
 				<div class="formulario__grupo-input">
                     <select name="tipo_asociado" id="tipo_asociado" class="formulario__input">
@@ -122,8 +122,8 @@
 				</div>
 				<p class="formulario__input-error">Seleccione una opción de la lista.</p>
 			</div>
-            <!-- Grupo: eps-->
-			<div class="formulario__grupo" id="grupo__correo">
+            <!-- Grupo: EPS -->
+			<div class="formulario__grupo" id="grupo__eps">
 				<label for="eps" class="formulario__label">EPS</label>
 				<div class="formulario__grupo-input">
                     <select name="eps" id="eps" class="formulario__input">
@@ -143,10 +143,11 @@
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b>Por favor rellene el formulario correctamente.</p>
 			</div>
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
-				<button type="submit" class="formulario__btn">Editar asociado</button>
+				<button type="submit" class="formulario__btn">Editar Asociado</button>
 				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
 			</div>
 		</form>
     </div>
+    <script src="../public/js/formulario.js"></script>
 </body>
 </html>

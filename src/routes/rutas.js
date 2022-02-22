@@ -19,7 +19,7 @@ router.post('/vacuna/update/:id_vacuna', vacunaController.update);
 //Rutas Iasociado
 router.get('/iasociado', iasociadoController.list);
 router.get('/iasociado/delete/:id', iasociadoController.delete);
-router.get('/iasociado/edit/:id' , iasociadoController.edit);
+router.get('/iasociado/edit/:id', iasociadoController.edit);
 router.post('/iasociado/update/:id', iasociadoController.update);
 
 module.exports = router;
